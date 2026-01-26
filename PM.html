@@ -1,0 +1,652 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Software Engineering Project Management — ePortfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <style>
+    /* Sticky Unit Navigator */
+    #unit-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+      background: #495797; /* Matches header background */
+      padding: 10px 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
+      overflow-x: auto; /* Allows scrolling on mobile */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    #unit-nav a {
+      display: inline-block;
+      margin: 0 4px;
+      padding: 5px 12px;
+      font-size: 0.8em;
+      font-weight: bold;
+      color: #ffffff;
+      border: 1px solid rgb(255, 255, 255);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    #unit-nav a:hover {
+      background: #ffffff;
+      color: #212432;
+      border-color: #ffffff;
+    }
+
+    /* Assessment Dashboard in Intro */
+    .assessment-box {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5em;
+      margin-top: 2em;
+      text-align: center;
+    }
+
+    .assessment-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+      margin-top: 1em;
+    }
+
+    /* Unit section container fix (prevents hover spillover) */
+    #main > section[id^="unit-"] {
+      position: relative;
+      overflow: hidden;        /* critical: prevents overlap into next/prev section */
+      padding: 1.5em 0;        /* breathing room so hover doesn't feel "cut" */
+      margin-bottom: 1.5em;    /* spacing between units */
+    }
+
+    #main > section[id^="unit-"]:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Hover Effect for Unit Cards */
+    .unit-card {
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    .unit-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+      background-color: rgba(212, 212, 255, 0.08) !important;
+      z-index: 2;
+    }
+
+    #main > section:not([id^="unit-"]) {
+      margin-bottom: 4em;
+    }
+
+    #main > section:not([id^="unit-"]):last-child {
+      margin-bottom: 0;
+    }
+
+    /* Read more toggle */
+    .read-more {
+      margin-top: 1em;
+      margin-bottom: 3em;
+    }
+
+    .read-more a {
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 1px outset rgba(255,255,255,0.5);
+    }
+
+    .more-content {
+      display: none;
+      padding-top: 1em;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+  <div id="wrapper">
+
+    <header id="header">
+      <a href="index.html" class="logo"><strong>Ruben Marques</strong> <span>Computer Science</span></a>
+      <nav>
+        <a href="#menu">Menu</a>
+      </nav>
+    </header>
+
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ISM.html">Information Security Management</a></li>
+        <li><a href="landing.html">Intro to Computer Science</a></li>
+        <li><a href="generic.html">Generic</a></li>
+        <li><a href="networks.html">Network Security</a></li>
+        <li><a href="OOP.html">Object-Oriented Programming</a></li>
+        <li><a href="PM.html">SE Project Management</a></li>
+      </ul>
+      <ul class="actions stacked">
+        <li><a href="#contact" class="button primary fit">Contact Me</a></li>
+      </ul>
+    </nav>
+
+    <div id="unit-nav">
+        <p>Navigate to Specific Unit</p>
+      <a href="#unit-1">01</a>
+      <a href="#unit-2">02</a>
+      <a href="#unit-3">03</a>
+      <a href="#unit-4">04</a>
+      <a href="#unit-5">05</a>
+      <a href="#unit-6">06</a>
+      <a href="#unit-7">07</a>
+      <a href="#unit-8">08</a>
+      <a href="#unit-9">09</a>
+      <a href="#unit-10">10</a>
+      <a href="#unit-11">11</a>
+      <a href="#unit-12">12</a>
+    </div>
+
+    <div id="main" class="alt">
+
+      <section id="one">
+        <div class="inner">
+          <header class="major">
+            <h1><i class="icon solid fa-tasks"></i> Software Engineering Project Management</h1>
+          </header>
+          <span class="image main"><img src="images/PM.jpg" alt="Project management abstract banner" /></span>
+
+          <p class="desc">
+            This page brings together weekly artefacts, short reflections, and the three summative assessments for the
+            <em>Software Engineering Project Management</em> module. The focus is practical: planning, estimating, risk, quality,
+            and people. No fluff — just what it takes to deliver software on time, on budget, and up to scratch.
+          </p>
+
+          <div class="assessment-box">
+            <h3>Quick Access: Summative Assessments</h3>
+            <p>Direct links to the key deliverables for this module.</p>
+            <div class="assessment-grid">
+              <a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit06/Assessment%201%20-%20Group%20Project%20Report/SEPM_Assignment%201_Group%202.pdf" class="button small" target="_blank"><i class="icon solid fa-file-pdf"></i> Assessment 1 (Report)</a>
+              <a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit11/Assignment_2/Assignment2_Presentation_compressed.mp4" class="button small" target="_blank"><i class="icon solid fa-video"></i> Assessment 2 (Video)</a>
+              <a href="https://github.com/MarqCodesFromZero/SEPM_MSc/releases/tag/SUM3" class="button small" target="_blank"><i class="icon solid fa-file-signature"></i> Assessment 3 (Reflection)</a>
+            </div>
+          </div>
+
+          <br>
+          <h3>Main goals for the module</h3>
+          <ol>
+            <li>Understand key principles of project management and how they relate to software engineering.</li>
+            <li>Explore architecture, Behaviour-Driven Development (BDD), and SDLC models.</li>
+            <li>Integrate approaches to manage conflicts and trade-offs across the triple constraint.</li>
+            <li>Develop skills in analysis, design, software construction, and testing.</li>
+            <li>Address psychological and sociological aspects of human–computer interaction.</li>
+            <li>Reflect on personal development and anticipate future challenges in the field.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- UNIT 1 -->
+      <section id="unit-1">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px;">
+          <header class="major">
+            <h2><i class="icon solid fa-flag-checkered"></i> 01 UNIT: Intro to SEPM</h2>
+          </header>
+
+          <p>
+            This unit introduced the Software Engineering Project Manager as a hybrid role, combining project management discipline
+            with software engineering realities. I explored how planning, estimation, and resource coordination must adapt to the
+            uncertainty and iterative nature of software development, rather than assuming stable scope and linear delivery.
+          </p>
+
+          <p>
+            <em>Activity:</em> Through a collaborative discussion on software project failure (Agrawal et al., 2024), I identified common
+            failure patterns and linked them to weak early governance and stakeholder alignment.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              The unit also emphasised that SEPM includes technical responsibilities such as requirements engineering, agile coordination,
+              and collaborative design. A key takeaway was that project controls in software must be flexible enough to support change while
+              still providing accountability and traceability for decisions.
+            </p>
+            <p>
+              At team level, we formalised a Group Contract defining roles, responsibilities, and communication rules, followed by an initial
+              planning session to allocate tasks. These artefacts created a shared operating baseline and reduced coordination risk in a distributed team.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_MSc/tree/main/Unit01" class="button primary fit" target="_blank" rel="noopener"><i class="icon brands fa-github"></i> Artefacts</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit01/Initial_Post_1_SEPM.pdf" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-comment"></i> Discussion Post</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit01/Team%20Kick-off%20Meeting%20%E2%80%93%20Week%201%20(1).pdf" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-users"></i> Meeting Notes</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 2 -->
+      <section id="unit-2" style="background-color: rgba(212, 212, 255, 0.05);">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <header class="major">
+            <h2><i class="icon solid fa-bug"></i> 02 UNIT: Why Projects Fail</h2>
+          </header>
+
+          <p>
+            Focusing on the high rate of failure in software initiatives, I analysed case examples to identify root causes and mitigation strategies.
+            A key outcome was understanding how clearer requirements engineering and stakeholder engagement reduce delivery risk.
+          </p>
+
+          <p>
+            <em>Seminar:</em> We practised eliciting requirements using <strong>Gherkin</strong>, turning vague user needs into structured,
+            testable scenarios that support implementation and verification.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              This unit reinforced that failure is often systemic: weak scoping, fragmented communication, and unmanaged risk tend to cascade into schedule slips,
+              cost overruns, and quality degradation. Analysing peer examples helped me recognise how early warning signals are often visible if governance is in place.
+            </p>
+            <p>
+              Applying Gherkin strengthened my ability to reduce ambiguity by defining behaviours and acceptance criteria, improving traceability from needs to delivery.
+              This also created a more realistic foundation for planning and estimation work in later units.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_MSc/tree/main/Unit02" class="button primary fit" target="_blank" rel="noopener"><i class="icon brands fa-github"></i> Artefacts</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit02/Team%20Meeting%20%E2%80%93%20Week%202%20(1).pdf" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-users"></i> Meeting Notes</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/tree/main/Unit02/Discussion%20Replies" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-reply"></i> Discussion 1 Replies</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 3 -->
+      <section id="unit-3">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px;">
+          <header class="major">
+            <h2><i class="icon solid fa-clipboard-list"></i> 03 UNIT: Estimating & Planning</h2>
+          </header>
+
+          <p>
+            This unit examined tools used for effective decision-making in project management, focusing on estimation techniques and planning tools
+            that fit different project contexts. The emphasis was on selecting approaches based on uncertainty, constraints, and delivery model.
+          </p>
+
+          <p>
+            <em>Reflective Activity:</em> I analysed an everyday online system (Wang et al., 2023) to understand how back-end data structures support
+            front-end performance, linking technical design choices to planning assumptions.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              The key learning was that estimation is not only a number; it is a justified argument based on scope clarity, known risks, dependencies,
+              and assumptions. Planning tools become more valuable when they expose these assumptions rather than hiding uncertainty behind a single figure.
+            </p>
+            <p>
+              In our team meeting, we reviewed sprint progress and redistributed workload for the upcoming phase, ensuring that delivery goals remained aligned
+              with the timeline and the evolving requirements baseline.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_MSc/tree/main/Unit03" class="button primary fit" target="_blank" rel="noopener"><i class="icon brands fa-github"></i> Artefacts</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit03/Team%20Meeting%20%E2%80%93%20Week%203%20%20(1).pdf" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-users"></i> Meeting Notes</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 4 -->
+      <section id="unit-4" style="background-color: rgba(212, 212, 255, 0.05);">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <header class="major">
+            <h2><i class="icon solid fa-shield-alt"></i> 04 UNIT: Risk Assessment</h2>
+          </header>
+
+          <p>
+            Building on earlier concepts, I deepened my understanding of risk evaluation for large-scale software systems. I practised producing project estimates
+            while accounting for contextual factors such as uncertainty, dependencies, and quality constraints.
+          </p>
+
+          <p>
+            <em>Wiki Activity:</em> I mapped risks identified in literature (Anton and Nucu, 2020) to SDLC stages and proposed practical mitigation strategies.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              This unit strengthened my ability to categorise and prioritise risks, linking mitigation choices to lifecycle timing (prevention early, containment later).
+              It also reinforced how risk exposure increases when estimation and planning ignore uncertainty or treat assumptions as facts.
+            </p>
+            <p>
+              Seminar preparation involved applying risk frameworks to a scenario and evaluating which controls were proportionate to likelihood and impact, ensuring that
+              mitigation was realistic rather than generic.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_MSc/tree/main/Unit04" class="button primary fit" target="_blank" rel="noopener"><i class="icon brands fa-github"></i> Artefacts</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit04/Summary%20-%20Collaborative%20Discussion%201.pdf" class="button primary fit" target="_blank" rel="noopener"><i class="icon solid fa-reply"></i> Discussion 1 Summary</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 5 -->
+      <section id="unit-5">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px;">
+          <header class="major">
+            <h2><i class="icon solid fa-user-circle"></i> 05 UNIT: User Experience</h2>
+          </header>
+
+          <p>
+            This unit examined User Experience (UX) and the Project Manager’s role in enabling it throughout the lifecycle. I explored how UX can be planned,
+            measured, and protected alongside technical requirements and delivery constraints.
+          </p>
+
+          <p>
+            <em>Collaborative Discussion:</em> We debated factors influencing UX and how stakeholder priorities and trade-offs shape the final product.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              A key insight was that UX is not purely interface design; it is a delivery outcome shaped by requirements quality, performance, reliability, and the way change is managed.
+              This connected naturally to risk and estimation, since rushed delivery often compromises user experience and adoption.
+            </p>
+            <p>
+              In our combined Week 4+5 meeting, we refined the backlog, clarified dependencies across time zones, and aligned sprint priorities with emerging constraints and technical challenges.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_MSc/tree/main/Unit05" class="button primary fit" target="_blank" rel="noopener"><i class="icon brands fa-github"></i> Artefacts</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit05/Discussion1_InitialPost.pdf" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-comment"></i> Discussion 1 Initial Post</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit05/Team%20Meeting%20%E2%80%93%20Week%204%2B5%20(1).pdf" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-users"></i> Meeting Notes</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 6 -->
+      <section id="unit-6" style="background-color: rgba(212, 212, 255, 0.05);">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <header class="major">
+            <h2><i class="icon solid fa-check-circle"></i> 06 UNIT: TDD & UX</h2>
+          </header>
+
+          <p>
+            This unit connected technical quality practices with user-centred delivery. I explored Test-Driven Development (TDD) and considered how stakeholder emotions
+            and expectations influence how “success” is judged in practice.
+          </p>
+
+          <p>
+            <em>Formative Activity:</em> I used <strong>Visual Studio Code</strong> to practise TDD with <code>pytest</code>, reinforcing how automated tests
+            reduce defects and improve confidence in change.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              A key takeaway was that testing is not just a developer concern: it is a project control that supports predictable delivery, protects UX, and reduces rework late in the lifecycle.
+              This unit also highlighted that stakeholder reactions are shaped by perceived reliability, communication, and expectation management—not only by feature completion.
+            </p>
+            <p>
+              This week also marked submission of the Team Project Report, where I contributed to requirements analysis and cost estimation, ensuring alignment between scope, feasibility, and delivery constraints.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_MSc/tree/main/Unit06" class="button primary fit" target="_blank" rel="noopener"><i class="icon brands fa-github"></i> Artefacts</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit06/Assessment%201%20-%20Group%20Project%20Report/SEPM_Assignment%201_Group%202.pdf" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-file-alt"></i> Assessment 1</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit06/Team%20Meeting%20%E2%80%93%20Week%206%20(1).pdf" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-users"></i> Meeting Notes</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 7 -->
+      <section id="unit-7">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px;">
+          <header class="major">
+            <h2><i class="icon solid fa-sync-alt"></i> 07 UNIT: SDLC</h2>
+          </header>
+
+          <p>
+            I compared Waterfall and Agile approaches to understand how the Software Development Life Cycle (SDLC) shapes project management work. Activities included
+            structuring requirements using the <strong>Volere template</strong> and defining BDD scenarios.
+          </p>
+
+          <p>
+            <em>Reflective Activity:</em> I analysed peer contributions on SDLC practice and considered how architecture and lifecycle decisions interact with UX and project outcomes.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              This unit clarified that lifecycle choice changes governance and change control: Waterfall relies on early stability, while Agile depends on disciplined iteration, prioritisation, and stakeholder engagement.
+              The Volere template strengthened my ability to structure requirements in a way that remains useful even when scope evolves.
+            </p>
+            <p>
+              The BDD focus reinforced that “definition of done” should be testable and traceable, supporting both quality assurance and better expectation management.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_MSc/tree/main/Unit07" class="button primary fit" target="_blank" rel="noopener"><i class="icon brands fa-github"></i> Artefacts</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/tree/main/Unit07/Discussion%202%20Replies" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-reply"></i> Discussion 2 Replies</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 8 -->
+      <section id="unit-8" style="background-color: rgba(212, 212, 255, 0.05);">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <header class="major">
+            <h2><i class="icon solid fa-database"></i> 08 UNIT: Data Structures</h2>
+          </header>
+
+          <p>
+            This unit focused on managing electronic data in connected systems. I selected and applied Python data structures (lists, dictionaries, sets)
+            to support efficient retention, access, and transformation of data.
+          </p>
+
+          <p>
+            <em>Seminar Prep:</em> I justified structure choices against functional and non-functional requirements using academic sources (e.g., Abeykoon et al., 2020).
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              The main learning was that “correct” data structures depend on the access pattern and constraints: performance, maintainability, and correctness requirements often shape the best choice.
+              This linked back to planning because architecture decisions affect scalability, effort, and risk.
+            </p>
+            <p>
+              The unit also reinforced communicating technical choices clearly, so stakeholders understand why specific implementations are needed to meet quality attributes such as latency and reliability.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit08/Discussion2_Summary.pdf" class="button primary fit" target="_blank" rel="noopener"><i class="icon solid fa-reply"></i> Discussion 2 Summary</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 9 -->
+      <section id="unit-9">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px;">
+          <header class="major">
+            <h2><i class="icon solid fa-clipboard-check"></i> 09 UNIT: Quality Strategy</h2>
+          </header>
+
+          <p>
+            I explored the distinction between quality planning, control, and assurance, focusing on how non-functional requirements translate into measurable test criteria.
+            I also examined technical debt as a predictable outcome of unmanaged quality trade-offs.
+          </p>
+
+          <p>
+            <em>Activity:</em> I applied code quality improvement strategies in Python, reinforcing how quality metrics and standards are implemented in practice.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              This unit reinforced that quality needs governance: without shared standards and acceptance criteria, defects and rework become “normalised,” increasing cost and slowing delivery.
+              Technical debt was particularly relevant as it links short-term delivery pressure to long-term maintenance burden.
+            </p>
+            <p>
+              Applying quality improvements in a real codebase demonstrated how planning quality upfront reduces failure risk later, supporting more predictable delivery and better user outcomes.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/tree/main/Unit09/Phonebook_Application" class="button primary fit" target="_blank" rel="noopener"><i class="icon brands fa-github"></i> Artefacts</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 10 -->
+      <section id="unit-10" style="background-color: rgba(212, 212, 255, 0.05);">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <header class="major">
+            <h2><i class="icon solid fa-code"></i> 10 UNIT: Quality Monitoring</h2>
+          </header>
+
+          <p>
+            This unit focused on maintaining code standards through practical monitoring. I applied Python linters to automate quality checks and improve code hygiene,
+            and examined how software quality concepts have evolved over time.
+          </p>
+
+          <p>
+            <em>Formative Activity:</em> I used tools such as Pylint, Pyflakes, and Pycodestyle to identify issues in a Python script, reflecting on how automated checks
+            reduce project failure risk caused by poor quality.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              The key learning was that automated quality gates reduce variation across teams and prevent quality drift during iteration. Tooling also supports maintainability by enforcing
+              clearer structure, documentation, and consistent style.
+            </p>
+            <p>
+              The unit also explored recovery strategies when quality has already degraded, reinforcing that prevention is cheaper than remediation, but remediation is possible when approached systematically.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/tree/main/Unit10/linters_activity" class="button primary fit" target="_blank" rel="noopener"><i class="icon brands fa-github"></i> Artefacts</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 11 -->
+      <section id="unit-11">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px;">
+          <header class="major">
+            <h2><i class="icon solid fa-rocket"></i> 11 UNIT: Future Trends</h2>
+          </header>
+
+          <p>
+            I reviewed emerging trends in computer science and IT to consider their impact on the future of SEPM, focusing on how innovations may reshape planning,
+            risk, governance, and stakeholder management.
+          </p>
+
+          <p>
+            <em>Assessment 2:</em> I prepared a recorded presentation arguing for one trend as a key driver of future SEPM practice, including risks, mitigations, and updated requirements.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              This unit strengthened my ability to move from “trend awareness” to practical implications: how a trend changes team capability needs, delivery constraints, security and compliance risks,
+              and how success should be measured.
+            </p>
+            <p>
+              The assessment required translating analysis into concrete project artefacts (requirements, costs, timeline, mitigation plan), reinforcing that future-focused SEPM must remain evidence-based and operational.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit11/Assignment_2/Assignment2_Presentation_compressed.mp4" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-video"></i> Assessment 2 (Video)</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_Msc/blob/main/Unit11/Assignment_2/Assignment2_Development%20Individual%20Project.pdf" class="button fit" target="_blank" rel="noopener"><i class=""></i> Assessment 2 Script</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UNIT 12 -->
+      <section id="unit-12" style="background-color: rgba(212, 212, 255, 0.05);">
+        <div class="inner unit-card" style="padding: clamp(1.5em, 5vw, 3em); border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <header class="major">
+            <h2><i class="icon solid fa-lightbulb"></i> 12 UNIT: The Future of SEPM</h2>
+          </header>
+
+          <p>
+            Synthesising research from Unit 11, I evaluated multiple trends and argued for the most influential driver shaping SEPM’s future direction, linking it to practical delivery outcomes.
+          </p>
+
+          <p>
+            <em>Final Reflective Piece:</em> Using the “What, So What, Now What” model, I identified key learning incidents from the module and defined how I will apply them in future projects.
+          </p>
+
+          <div class="read-more"><a href="#">Read more</a></div>
+          <div class="more-content">
+            <p>
+              The key learning was that future-facing SEPM requires balancing innovation with controls: governance, quality, and risk management remain essential even as tooling and delivery models change.
+              Strong project management is still defined by clarity of requirements, disciplined execution, and stakeholder alignment.
+            </p>
+            <p>
+              The final reflection consolidated improvements in my practice: stronger requirements thinking, more realistic estimation, clearer risk framing, and a higher emphasis on measurable quality.
+              These areas directly transfer into professional delivery contexts where deadlines, cost constraints, and stakeholder expectations must be managed in parallel.
+            </p>
+          </div>
+
+          <ul class="actions">
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_MSc/tree/main/Unit12" class="button primary fit" target="_blank" rel="noopener"><i class="icon brands fa-github"></i> Artefacts</a></li>
+            <li><a href="https://github.com/MarqCodesFromZero/SEPM_MSc/releases/tag/SUM3" class="button fit" target="_blank" rel="noopener"><i class="icon solid fa-file-signature"></i> Assessment 3</a></li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <footer id="footer">
+      <div class="inner">
+        <ul class="icons">
+          <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+          <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Ruben Marques</li>
+          <li>Design: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.querySelectorAll('.read-more a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const card = link.closest('.unit-card');
+        const content = card.querySelector('.more-content');
+        const expanded = content.style.display === 'block';
+
+        content.style.display = expanded ? 'none' : 'block';
+        link.textContent = expanded ? 'Read more' : 'Read less';
+      });
+    });
+  </script>
+
+</body>
+</html>
